@@ -1,0 +1,10 @@
+[
+  {"edge": 1, "expected_path": "apps/billing-ts/src/legacy/legacy-webhook.ts", "must_not_have_status": ["impacted"], "expected_status": "upgrade_risk"},
+  {"edge": 2, "expected_path": "apps/billing-ts/src/stripe/unused-field.ts", "must_have_no_finding": true},
+  {"edge": 3, "expected_path": "apps/ingestion-py/service/trusted_config.py", "must_have_no_finding": true},
+  {"edge": 4, "expected_path": "apps/account-js/package-lock.json", "package": "minimist", "must_not_have_status": ["impacted"], "expected_status": "exposed"},
+  {"edge": 10, "expected_path": "apps/ingestion-py/requirements-dev.txt", "package": "jinja2", "must_not_have_status": ["impacted"], "expected_status": "unverified"},
+  {"edge": "E-constant", "expected_path": "apps/audit-java/src/main/java/demo/RequestAudit.java", "line": 26, "must_have_no_finding": true},
+  {"edge": "shopify", "provider": "shopify", "must_have_no_finding": true},
+  {"edge": "stripe-sdk-osv", "package": "stripe", "change_kind": "vulnerability", "must_have_no_finding": true}
+]

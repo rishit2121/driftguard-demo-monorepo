@@ -1,0 +1,34 @@
+# Evaluation-only manifest. DriftGuard never reads this directory while scanning.
+scenarios:
+  - id: A
+    title: Stripe 2025-03-31.basil removes subscription.current_period_* (TypeScript)
+    source: https://docs.stripe.com/changelog/basil/2025-03-31/deprecate-subscription-current-period-start-and-end
+    files: [apps/billing-ts/src/stripe/subscription.ts, apps/billing-ts/src/stripe/invoice-preview.ts]
+  - id: B
+    title: Webhook endpoint pinned to basil reads subscription.current_period_end; signature + idempotency preserved
+    files: [apps/billing-ts/src/stripe/webhook-handler.ts]
+  - id: C
+    title: CVE-2020-14343 PyYAML 5.3.1 + yaml.full_load / FullLoader on untrusted partner uploads
+    files: [apps/ingestion-py/service/import_config.py]
+  - id: D
+    title: CVE-2019-10744 lodash 4.17.11 + defaultsDeep(untrustedPayload)
+    files: [apps/account-js/src/merge_profile.js]
+  - id: E
+    title: CVE-2021-44228 log4j-core 2.14.1 + logging attacker-influenced header (candidate only)
+    files: [apps/audit-java/src/main/java/demo/RequestAudit.java]
+  - id: S
+    title: Semgrep stretch - simulated AI-generated webhook parser trusts unsigned bodies
+    files: [apps/billing-ts/src/stripe/ai-generated-webhook.ts]
+edge_cases:
+  1: Pinned old Stripe API version -> future upgrade risk, not current failure (legacy-webhook.ts)
+  2: Similarly named field on an unrelated object must not trigger (unused-field.ts)
+  3: PyYAML present but safe_load on trusted config (trusted_config.py) - no finding at that path
+  4: Vulnerable package only as dev dependency (minimist) -> inventory exposure, not runtime
+  5: Same symbol via destructuring alias in another module (invoice-preview.ts) - found
+  6: A candidate fix passes the security test but breaks a valid use case -> rejected (items.data[0], shallow Object.assign)
+  7: Advisory re-fetched / updated -> hash-deduplicated, no duplicate alerts
+  8: Instruction-like text in fetched/untrusted docs -> quarantined, never acted on (fixtures/docs/*)
+  9: Multiple Stripe API versions on different webhook endpoints -> finding scoped per endpoint
+  10: No resolved version (Jinja2>=2.10, no lockfile) -> version unverified, not guessed
+  11: Upgrade target still affected by a different advisory -> disclosed (lodash 4.17.12, log4j 2.15.0)
+  12: Branch moved since scan -> re-scan before PR, link exact SHA

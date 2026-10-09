@@ -1,3 +1,4 @@
+// Renewal helpers for the billing dashboard and dunning emails.
 import type Stripe from 'stripe';
 
 export interface RenewalSummary {

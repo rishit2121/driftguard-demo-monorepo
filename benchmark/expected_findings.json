@@ -1,0 +1,23 @@
+[
+  {"scenario": "A", "expected_alert_type": "breaking_api", "expected_path": "apps/billing-ts/src/stripe/subscription.ts", "expected_lines": [14, 23],
+   "expected_rule_id": "driftguard.stripe.subscription-period-fields-removed-basil", "expected_is_impacted": true, "expected_action": "draft_pr",
+   "expected_regression_tests": "tests/drift/stripe-basil-periods.test.ts", "confidence_tier": "confirmed"},
+  {"scenario": "A/edge5", "expected_alert_type": "breaking_api", "expected_path": "apps/billing-ts/src/stripe/invoice-preview.ts", "expected_lines": [5],
+   "expected_rule_id": "driftguard.stripe.subscription-period-fields-removed-basil", "expected_is_impacted": true, "expected_action": "draft_pr",
+   "expected_regression_tests": "tests/drift/stripe-basil-periods.test.ts", "confidence_tier": "confirmed"},
+  {"scenario": "B", "expected_alert_type": "breaking_api", "expected_path": "apps/billing-ts/src/stripe/webhook-handler.ts", "expected_lines": [40],
+   "expected_rule_id": "driftguard.stripe.subscription-period-fields-removed-basil", "expected_is_impacted": true, "expected_action": "draft_pr",
+   "expected_regression_tests": "tests/drift/stripe-basil-periods.test.ts", "confidence_tier": "confirmed"},
+  {"scenario": "C", "expected_alert_type": "vulnerable_dependency", "expected_path": "apps/ingestion-py/service/import_config.py", "expected_lines": [9, 20],
+   "expected_rule_id": "driftguard.python.pyyaml-full-loader", "expected_is_impacted": true, "expected_action": "draft_pr",
+   "expected_regression_tests": "tests/test_driftguard_cve_2020_14343.py", "confidence_tier": "confirmed"},
+  {"scenario": "D", "expected_alert_type": "vulnerable_dependency", "expected_path": "apps/account-js/src/merge_profile.js", "expected_lines": [12],
+   "expected_rule_id": "driftguard.js.lodash-defaultsdeep-prototype-pollution", "expected_is_impacted": true, "expected_action": "draft_pr",
+   "expected_regression_tests": "tests/driftguard-cve-2019-10744.test.js", "confidence_tier": "confirmed"},
+  {"scenario": "E", "expected_alert_type": "vulnerable_dependency", "expected_path": "apps/audit-java/src/main/java/demo/RequestAudit.java", "expected_lines": [21],
+   "expected_rule_id": "driftguard.java.log4j-nonconstant-log-message", "expected_is_impacted": true, "expected_action": "recommend_upgrade",
+   "expected_regression_tests": null, "confidence_tier": "candidate"},
+  {"scenario": "S", "expected_alert_type": "insecure_code", "expected_path": "apps/billing-ts/src/stripe/ai-generated-webhook.ts", "expected_lines": [7],
+   "expected_rule_id": "driftguard.stripe.webhook-unverified-fallback", "expected_is_impacted": true, "expected_action": "review",
+   "expected_regression_tests": null, "confidence_tier": "review"}
+]
