@@ -6,7 +6,7 @@ REQUIRED_KEYS = {"source", "schedule"}
 
 def parse_partner_config(document: str) -> dict:
     """Parse a YAML document uploaded by an external partner."""
-    config = yaml.full_load(document)
+    config = yaml.safe_load(document)
     if not isinstance(config, dict):
         raise ValueError("config must be a mapping")
     missing = REQUIRED_KEYS - config.keys()
@@ -17,4 +17,4 @@ def parse_partner_config(document: str) -> dict:
 
 def parse_partner_batch(stream: str) -> list:
     """Multi-document variant used by the bulk importer."""
-    return [doc for doc in yaml.load_all(stream, Loader=yaml.FullLoader) if doc]
+    return [doc for doc in yaml.safe_load_all(stream) if doc]
