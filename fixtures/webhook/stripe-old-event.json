@@ -1,0 +1,37 @@
+{
+  "_provenance": "SYNTHETIC customer.subscription.updated event as delivered to an endpoint pinned to 2024-12-18.acacia. Signed in tests with a throwaway test secret.",
+  "id": "evt_demo_old_0001",
+  "object": "event",
+  "api_version": "2024-12-18.acacia",
+  "created": 1767225600,
+  "type": "customer.subscription.updated",
+  "livemode": false,
+  "data": {
+    "object": {
+      "id": "sub_demo_old_0001",
+      "object": "subscription",
+      "customer": "cus_demo_0001",
+      "status": "active",
+      "current_period_start": 1735689600,
+      "current_period_end": 1767225600,
+      "items": {
+        "object": "list",
+        "data": [
+          {
+            "id": "si_demo_plan_0001",
+            "object": "subscription_item",
+            "quantity": 1,
+            "price": {
+              "id": "price_demo_pro_yearly",
+              "object": "price",
+              "recurring": {
+                "interval": "year",
+                "interval_count": 1
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

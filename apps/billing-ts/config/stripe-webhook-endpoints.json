@@ -1,0 +1,7 @@
+{
+  "_comment": "Mirror of webhook endpoint settings in the (synthetic) Stripe dashboard. Each endpoint has its own pinned API version.",
+  "endpoints": [
+    { "url": "/webhooks/stripe", "api_version": "2025-03-31.basil", "handlers": ["src/stripe/webhook-handler.ts"] },
+    { "url": "/webhooks/stripe-legacy", "api_version": "2024-12-18.acacia", "handlers": ["src/legacy/legacy-webhook.ts"] }
+  ]
+}

@@ -1,0 +1,5 @@
+pipelines:
+  - name: nightly-orders
+    source: s3://demo-bucket/orders/
+    schedule: "0 2 * * *"
+    retries: 3

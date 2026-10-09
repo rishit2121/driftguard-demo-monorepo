@@ -1,0 +1,14 @@
+{
+  "name": "@driftguard-demo/billing-ts",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "INTENTIONALLY VULNERABLE DEMO - synthetic billing service using the Stripe Node SDK",
+  "scripts": {
+    "test": "node --test \"tests/**/*.test.ts\""
+  },
+  "engines": { "node": ">=23.6" },
+  "dependencies": {
+    "stripe": "18.0.0"
+  }
+}

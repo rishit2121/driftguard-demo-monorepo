@@ -1,0 +1,20 @@
+{
+  "_provenance": "SYNTHETIC fixture shaped after the Stripe Subscription object for API version 2024-12-18.acacia (subscription-level current_period_start/current_period_end). No real account data.",
+  "id": "sub_demo_old_0001",
+  "object": "subscription",
+  "customer": "cus_demo_0001",
+  "status": "active",
+  "current_period_start": 1735689600,
+  "current_period_end": 1767225600,
+  "items": {
+    "object": "list",
+    "data": [
+      {
+        "id": "si_demo_plan_0001",
+        "object": "subscription_item",
+        "quantity": 1,
+        "price": { "id": "price_demo_pro_yearly", "object": "price", "recurring": { "interval": "year", "interval_count": 1 } }
+      }
+    ]
+  }
+}

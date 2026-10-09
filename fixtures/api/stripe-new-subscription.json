@@ -1,0 +1,28 @@
+{
+  "_provenance": "SYNTHETIC fixture shaped after the Stripe Subscription object for API version 2025-03-31.basil: subscription-level current_period_* removed, periods live on each subscription item (mixed intervals allowed). Item order intentionally puts a monthly add-on first. No real account data.",
+  "id": "sub_demo_new_0002",
+  "object": "subscription",
+  "customer": "cus_demo_0002",
+  "status": "active",
+  "items": {
+    "object": "list",
+    "data": [
+      {
+        "id": "si_demo_seats_0002",
+        "object": "subscription_item",
+        "quantity": 5,
+        "current_period_start": 1764547200,
+        "current_period_end": 1767225600,
+        "price": { "id": "price_demo_seat_monthly", "object": "price", "recurring": { "interval": "month", "interval_count": 1 } }
+      },
+      {
+        "id": "si_demo_plan_0002",
+        "object": "subscription_item",
+        "quantity": 1,
+        "current_period_start": 1751328000,
+        "current_period_end": 1782864000,
+        "price": { "id": "price_demo_pro_yearly", "object": "price", "recurring": { "interval": "year", "interval_count": 1 } }
+      }
+    ]
+  }
+}
