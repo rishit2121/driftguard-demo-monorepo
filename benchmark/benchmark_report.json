@@ -1,6 +1,6 @@
 {
-  "run_id": "run_20261009_195350_92b87c",
-  "commit_sha": "9c3b63f723c1320a5e68ea735c43544d01dbf2e1",
+  "run_id": "run_20261009_202646_551504",
+  "commit_sha": "964c1ae925f487057513c3f856474e1d972c2779",
   "case_recall": {
     "value": 1.0,
     "detected": 7,
