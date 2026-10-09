@@ -1,0 +1,166 @@
+{
+  "run_id": "run_20261009_195350_92b87c",
+  "commit_sha": "9c3b63f723c1320a5e68ea735c43544d01dbf2e1",
+  "case_recall": {
+    "value": 1.0,
+    "detected": 7,
+    "n": 7
+  },
+  "false_positive_rate": {
+    "value": 0.0,
+    "incorrect": 0,
+    "n": 8
+  },
+  "exact_line_localization": {
+    "value": 1.0,
+    "n": 7
+  },
+  "confidence_tier_agreement": {
+    "value": 1.0,
+    "n": 7
+  },
+  "version_correctness": {
+    "value": 1.0,
+    "n": 3
+  },
+  "quarantine": [
+    "fixtures/docs/mirror-with-injected-instructions.md"
+  ],
+  "scenarios": [
+    {
+      "scenario": "A",
+      "detected": true,
+      "exact_lines": true,
+      "found_lines": [
+        14,
+        23
+      ],
+      "tier_match": true,
+      "tiers": [
+        "confirmed"
+      ]
+    },
+    {
+      "scenario": "A/edge5",
+      "detected": true,
+      "exact_lines": true,
+      "found_lines": [
+        5
+      ],
+      "tier_match": true,
+      "tiers": [
+        "confirmed"
+      ]
+    },
+    {
+      "scenario": "B",
+      "detected": true,
+      "exact_lines": true,
+      "found_lines": [
+        40
+      ],
+      "tier_match": true,
+      "tiers": [
+        "confirmed"
+      ]
+    },
+    {
+      "scenario": "C",
+      "detected": true,
+      "exact_lines": true,
+      "found_lines": [
+        9,
+        20
+      ],
+      "tier_match": true,
+      "tiers": [
+        "confirmed"
+      ]
+    },
+    {
+      "scenario": "D",
+      "detected": true,
+      "exact_lines": true,
+      "found_lines": [
+        12
+      ],
+      "tier_match": true,
+      "tiers": [
+        "confirmed"
+      ]
+    },
+    {
+      "scenario": "E",
+      "detected": true,
+      "exact_lines": true,
+      "found_lines": [
+        21
+      ],
+      "tier_match": true,
+      "tiers": [
+        "candidate"
+      ]
+    },
+    {
+      "scenario": "S",
+      "detected": true,
+      "exact_lines": true,
+      "found_lines": [
+        7
+      ],
+      "tier_match": true,
+      "tiers": [
+        "review"
+      ]
+    }
+  ],
+  "negatives": [
+    {
+      "edge": 1,
+      "correct_non_alert": true,
+      "observed": [
+        "upgrade_risk"
+      ]
+    },
+    {
+      "edge": 2,
+      "correct_non_alert": true,
+      "observed": []
+    },
+    {
+      "edge": 3,
+      "correct_non_alert": true,
+      "observed": []
+    },
+    {
+      "edge": 4,
+      "correct_non_alert": true,
+      "observed": [
+        "exposed"
+      ]
+    },
+    {
+      "edge": 10,
+      "correct_non_alert": true,
+      "observed": [
+        "unverified"
+      ]
+    },
+    {
+      "edge": "E-constant",
+      "correct_non_alert": true,
+      "observed": []
+    },
+    {
+      "edge": "shopify",
+      "correct_non_alert": true,
+      "observed": []
+    },
+    {
+      "edge": "stripe-sdk-osv",
+      "correct_non_alert": true,
+      "observed": []
+    }
+  ],
+  "note": "Small hand-built benchmark (synthetic demo repo). Values are exact counts on this corpus, not general accuracy claims."
+}
